@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Form</title>
+    <style>
+        body{
+            margin: 20px;
+            font-family: sans-serif;
+        }
+        .input-container{
+            margin-bottom: 15px;
+            max-width: 300px; 
+        }
+        .input-container[data-error] .input{
+            border-color: #c92432;
+            color: #c92432;
+            background: #fffafa;
+        }
+        .input-container[data-error]::after{
+            content: attr(data-error);
+            font-size: 0.85em;
+            color: #c92432;
+            display: block;
+            margin: 10px 0;
+        }
+        .input{
+            display: block;
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="input-container" data-error="Sorry, that username is taken" >
+        <input type="text" class="input" placeholder="Username" value="Larkson">
+    </div>
+    <div class="input-container">
+        <input type="password" class="input" placeholder="Passowrd">
+    </div>
+    <div class="input-container">
+        <input type="password" class="input" placeholder="Confirm Password">
+    </div>
+</body>
+</html>

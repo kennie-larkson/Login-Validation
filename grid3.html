@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS GRID</title>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+        .wrapper{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+        }
+        .wrapper > div{
+            background: #eee;
+            padding: 1em;
+        }
+        .wrapper > div:nth-child(odd){
+            background: #ddd;
+        }
+        
+        
+        
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+      <div class="box">Box 1</div>  
+      <div class="box">Box 2</div>  
+      <div class="box">Box 3</div>  
+      <div class="box">Box 4</div>  
+    </div>
+    
+</body>
+</html>

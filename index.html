@@ -7,11 +7,22 @@
     <title>Login Form</title>
     <style>
         body{
-            margin: 20px;
+            background-color: #c92432;
             font-family: sans-serif;
+        }
+        .banner{
+            width: 100%;
+            /* height: 30%; */
+            background-color: #c92432;
+        }
+        .main-container{
+            width: 30%;
+            margin: 30px;
+            background-color: bisque;
         }
         .input-container{
             margin-bottom: 15px;
+            margin-left: 15px;
             max-width: 300px; 
         }
         .input-container[data-error] .input{
@@ -24,7 +35,7 @@
             font-size: 0.85em;
             color: #c92432;
             display: block;
-            margin: 10px 0;
+            margin: 10px ;
         }
         .input{
             display: block;
@@ -32,19 +43,31 @@
             padding: 12px;
             border: 1px solid #dddddd;
             border-radius: 4px;
-
+            transition: background 0.5s, border 0.5s;
         }
     </style>
 </head>
 <body>
-    <div class="input-container" data-error="Sorry, that username is taken" >
-        <input type="text" class="input" placeholder="Username" value="Larkson">
+    <div class="banner">BANNER</div>
+    <div class="main-container">
+        <div class="input-container" data-error="Sorry, that username is taken" >
+            <input type="text" class="input" placeholder="Username" value="Larkson">
+        </div>
+        <div class="input-container">
+            <input type="password" class="input" placeholder="Passowrd">
+        </div>
+        <div class="input-container">
+            <input type="password" class="input" placeholder="Confirm Password">
+        </div>
+    
+
     </div>
-    <div class="input-container">
-        <input type="password" class="input" placeholder="Passowrd">
-    </div>
-    <div class="input-container">
-        <input type="password" class="input" placeholder="Confirm Password">
-    </div>
+    
+
+    <script>
+        document.querySelectorAll('.input-container[data-error] .input').forEach( inputEle => {
+            inputEle.addEventListener('input', ()=> inputEle.parentElement.removeAttribute('data-error'));
+        });
+    </script>
 </body>
 </html>
